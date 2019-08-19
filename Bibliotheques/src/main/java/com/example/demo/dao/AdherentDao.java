@@ -181,22 +181,23 @@ public class AdherentDao implements IAdherentDao  {
 		return null;
 	}
 
-	@Override
-	public Page<Adherent> rechParNom(String mcN, Pageable pageable) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Page<Adherent> rechParVille(String mcN, Pageable pageable) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public List<Adherent> retardAdherent() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Adherent> rechParNom(String mcN) {
+		// TODO Auto-generated method stub
+		return adherentDao.rechParNom(mcN);
+	}
+
+	@Override
+	public List<Adherent> rechParVille(String mcN) {
+		// TODO Auto-generated method stub
+		return adherentDao.rechParVille(mcN);
 	}
 
 	
