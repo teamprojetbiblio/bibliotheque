@@ -49,6 +49,22 @@ public class Adherent implements Serializable {
 		this.telephone = telephone;
 	}
 	
+	
+	
+	public Adherent(long id_adh, String nom, String prenom, String email, String password, String adresse, String ville,
+			String telephone) {
+		super();
+		this.id_adh = id_adh;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.password = password;
+		this.adresse = adresse;
+		this.ville = ville;
+		this.telephone = telephone;
+	}
+	
+	
 	//getters et setters
 	public long getId_adh() {
 		return id_adh;
