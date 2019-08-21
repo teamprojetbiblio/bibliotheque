@@ -12,9 +12,11 @@ import com.example.demo.entities.Adherent;
 
 public interface IAdherentDao extends JpaRepository<Adherent, Long> {
 	
+	//methode pour rechercher adherents par nom
 	@Query("SELECT adh FROM Adherent adh WHERE adh.nom=:x")
 	public List<Adherent> rechParNom(@Param("x") String mcN );
 	
+	//methode pour rechercher adherents par ville
 	@Query("SELECT adh FROM Adherent adh WHERE adh.ville=:x")
 	public List<Adherent> rechParVille(@Param("x") String mcV );
 	

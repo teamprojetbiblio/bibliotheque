@@ -30,9 +30,9 @@ public class AdherentDao implements IAdherentDao  {
 	@Autowired
 	IAdherentDao adherentDao;
 
+	//methode de l'affichage complete de la liste
 	@Override
 	public List<Adherent> findAll() {
-		// TODO Auto-generated method stub
 		return adherentDao.findAll();
 	}
 
@@ -42,9 +42,9 @@ public class AdherentDao implements IAdherentDao  {
 		return null;
 	}
 
+	
 	@Override
 	public List<Adherent> findAllById(Iterable<Long> ids) {
-		// TODO Auto-generated method stub
 		return adherentDao.findAllById(ids);
 	}
 
@@ -78,9 +78,10 @@ public class AdherentDao implements IAdherentDao  {
 		
 	}
 
+	
+	//methode rechercher un adherent par l'id
 	@Override
 	public Adherent getOne(Long id) {
-		// TODO Auto-generated method stub
 		return  adherentDao.findById(id).get();
 	}
 
@@ -102,6 +103,7 @@ public class AdherentDao implements IAdherentDao  {
 		return null;
 	}
 
+	//ajouter/modifier les champs d'un adherent
 	@Override
 	public <S extends Adherent> S save(S entity) {
 		
@@ -124,11 +126,11 @@ public class AdherentDao implements IAdherentDao  {
 		return 0;
 	}
 
+	
+	//supprimer un adherent de la liste
 	@Override
-	public void deleteById(Long id) {
-		
-		adherentDao.deleteById(id);
-		
+	public void deleteById(Long id) {	
+		adherentDao.deleteById(id);	
 	}
 
 	@Override
