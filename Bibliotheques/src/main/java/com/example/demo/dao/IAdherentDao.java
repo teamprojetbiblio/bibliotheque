@@ -18,6 +18,5 @@ public interface IAdherentDao extends JpaRepository<Adherent, Long> {
 	@Query("SELECT adh FROM Adherent adh WHERE adh.ville like %:x%")
 	public List<Adherent> rechParVille(@Param("x") String mcN );
 	
-	public List<Adherent> retardAdherent();
 
 }

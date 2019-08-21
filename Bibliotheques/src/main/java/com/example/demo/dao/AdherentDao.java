@@ -182,11 +182,7 @@ public class AdherentDao implements IAdherentDao  {
 	}
 
 
-	@Override
-	public List<Adherent> retardAdherent() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public List<Adherent> rechParNom(String mcN) {

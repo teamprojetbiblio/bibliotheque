@@ -13,12 +13,11 @@
 <body>
 
 <ul class="">
-  <li role="presentation" ><a href="${pageContext.request.contextPath}/eCTRL/liste">Accueil </a></li>        <!-- il faut appeler dans href l'url des methodes des Controllers et non la page -->
-  <li role="presentation"><a href="<c:url value='/eCTRL/afficheAjout'/>">Ajouter </a></li>
-  <li role="presentation"><a href="<c:url value='/eCTRL/afficheModif'/>">Modifier </a></li>
-  <li role="presentation"><a href="<c:url value='/eCTRL/afficheRech'/>">Rechercher </a></li>
-  <li role="presentation"><a href="<c:url value='/eCTRL/afficheSuppr'/>">Supprimer </a></li>
-  <li  role="presentation"> <a href="<c:url value='/j_spring_security_logout'/>">Se déconnecter</a></li>
+  <li role="presentation" ><a href="<c:url value='/adhController/listeAdherent'/>">Accueil </a></li>        <!-- il faut appeler dans href l'url des methodes des Controllers et non la page -->
+  <li role="presentation"><a href="<c:url value=''/>">Ajouter </a></li>
+  <li role="presentation"><a href="<c:url value=''/>">Modifier </a></li>
+  <li role="presentation"><a href="<c:url value=''/>">Rechercher </a></li>
+  <li role="presentation"><a href="<c:url value=''/>">Supprimer </a></li>
 </ul>
 
 <h1 style="color: red; text-align: center">Liste des adherents</h1>
@@ -42,14 +41,14 @@
 			<c:forEach var="e" items="${listeAdherent}">
 
 				<tr>
-					<td>${e.id }</td>
+					<td>${e.id_adh }</td>
 					<td>${e.nom }</td>
 					<td>${e.prenom }</td>
-					<td> ${e.email}</td>
-					<td> ${e.password}</td>
-					<td> ${e.adresse}</td>
-					<td> ${e.ville}</td>
-					<td> ${e.telephone}</td>
+					<td>${e.email}</td>
+					<td>${e.password}</td>
+					<td>${e.adresse}</td>
+					<td>${e.ville}</td>
+					<td>${e.telephone}</td>
 					
 				</tr>
 			</c:forEach>
