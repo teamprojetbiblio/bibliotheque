@@ -12,13 +12,14 @@
 </head>
 <body>
 
-<ul class="">
-  <li role="presentation" ><a href="<c:url value='/adhController/listeAdherent'/>">Accueil </a></li>        <!-- il faut appeler dans href l'url des methodes des Controllers et non la page -->
-  <li role="presentation"><a href="<c:url value=''/>">Ajouter </a></li>
-  <li role="presentation"><a href="<c:url value=''/>">Modifier </a></li>
-  <li role="presentation"><a href="<c:url value=''/>">Rechercher </a></li>
-  <li role="presentation"><a href="<c:url value=''/>">Supprimer </a></li>
-</ul>
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <a class="navbar-brand mr-1" href="/adhController/listeAdherent">Liste des adherents</a>
+    <a class="navbar-brand mr-1" href="">Ajouter un adherent</a>
+    <a class="navbar-brand mr-1" href="">Modifier un adherents</a>
+    <a class="navbar-brand mr-1" href="">Rechercher un adherent</a>
+    
+  </nav>
+
 
 <h1 style="color: red; text-align: center">Liste des adherents</h1>
 

@@ -3,11 +3,14 @@ package com.example.demo.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.IAdherentDao;
@@ -49,4 +52,20 @@ public class AdherentRestService {
 	{
 		adherentDao.deleteById(id);
 	}
+	
+	
+	@RequestMapping(value = "/rechAdherentNom",method = RequestMethod.GET)
+	public List<Adherent> rechercheAdherentNom(String nom)
+	{
+		List<Adherent> listAdhe=adherentDao.rechParNom(nom);
+				return listAdhe;
+	}
+	
+	@RequestMapping(value = "/rechAdherentVille",method = RequestMethod.GET)
+	public List<Adherent> rechercheAdherentVille(String ville)
+	{
+		List<Adherent> listAdhe=adherentDao.rechParVille(ville);
+				return listAdhe;
+	}
+	
 }

@@ -12,11 +12,11 @@ import com.example.demo.entities.Adherent;
 
 public interface IAdherentDao extends JpaRepository<Adherent, Long> {
 	
-	@Query("SELECT adh FROM Adherent adh WHERE adh.nom like %:x%")
+	@Query("SELECT adh FROM Adherent adh WHERE adh.nom=:x")
 	public List<Adherent> rechParNom(@Param("x") String mcN );
 	
-	@Query("SELECT adh FROM Adherent adh WHERE adh.ville like %:x%")
-	public List<Adherent> rechParVille(@Param("x") String mcN );
+	@Query("SELECT adh FROM Adherent adh WHERE adh.ville=:x")
+	public List<Adherent> rechParVille(@Param("x") String mcV );
 	
 
 }
