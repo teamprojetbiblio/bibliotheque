@@ -23,37 +23,45 @@ public class AdherentRestService {
 	@Autowired
 	private IAdherentDao adherentDao;
 	
+	
+	//methode retourne liste complete adherent pour le front
 	@RequestMapping(value = "/adherents", method =RequestMethod.GET)
 	public List<Adherent> getAllAdherent()
 	{
 		return adherentDao.findAll();
 	}
 	
+	
+	//retourne adherent par l'id pour le front
 	@RequestMapping(value = "/adherents/{id}", method = RequestMethod.GET)
 	public Adherent getAdherentById(@PathVariable("id") long id)
 	{
 		return adherentDao.getOne(id);
 	}
 	
+	
+	//ajouter unn adherent (front)
 	@RequestMapping(value = "/adherents",method = RequestMethod.POST)
 	public Adherent addAdhrent(@RequestBody Adherent adh)
 	{
 		return adherentDao.save(adh);
 	}
 	
+	//modifier un adherent (front)
 	@RequestMapping(value = "/adherents/{pId}",method = RequestMethod.PUT)
 	public Adherent updateAdhrent(@RequestBody Adherent adh, @PathVariable("pId")  long id)
 	{
 		return adherentDao.save(adh);
 	}
 	
+	//supprimer un adherent (front)
 	@RequestMapping(value="/adherents/{pId}",method = RequestMethod.DELETE)
 	public void deleteContact(@PathVariable("pId") long id)
 	{
 		adherentDao.deleteById(id);
 	}
 	
-	
+	//rechercher un adherent par son nom (front)
 	@RequestMapping(value = "/rechAdherentNom",method = RequestMethod.GET)
 	public List<Adherent> rechercheAdherentNom(String nom)
 	{
@@ -61,6 +69,7 @@ public class AdherentRestService {
 				return listAdhe;
 	}
 	
+	//rechercher un adhérent par la ville (front)
 	@RequestMapping(value = "/rechAdherentVille",method = RequestMethod.GET)
 	public List<Adherent> rechercheAdherentVille(String ville)
 	{
