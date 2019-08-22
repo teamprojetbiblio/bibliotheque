@@ -201,6 +201,66 @@ public String deleteLinkAdh(Model modele, @PathVariable ("pId") long id)
 
 
 
+///////////rechercher l'adhérent par le nom
+//afficher le formulaire
+@RequestMapping(value="/rechercherAdhNomAffiche",method = RequestMethod.GET)
+public ModelAndView rechercherAdhNomAffiche()
+{		
+//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
+return new ModelAndView("rechercheNom","adhRechNom",new Adherent());
+}
+
+@RequestMapping(value = "/rechercherAdhNomSubmit",method = RequestMethod.POST)
+public String rechercherAdhNomSubmit(Model modele, @ModelAttribute("adhRechNom") Adherent adhrent)
+{
+//appel de la fonction rechercher Id adherent
+List<Adherent> listeNom=adherentService.findAdherentByName(adhrent);
+
+if(listeNom!=null)
+{
+	//mettre le résultat de la recherche dans le modele
+	modele.addAttribute("listeNom", listeNom);
+	
+	//retour sur la jsp voulue
+	return "rechercheNom";
+}
+else
+{
+	return "rechercheNom";
+}
+}
+
+
+///////////rechercher l'adhérent par le nom
+//afficher le formulaire
+@RequestMapping(value="/rechercherAdhVilleAffiche",method = RequestMethod.GET)
+public ModelAndView rechercherAdhVilleAffiche()
+{		
+//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
+return new ModelAndView("rechercheVille","adhRechVille",new Adherent());
+}
+
+@RequestMapping(value = "/rechercherAdhVilleSubmit",method = RequestMethod.POST)
+public String rechercherAdhVilleSubmit(Model modele, @ModelAttribute("adhRechVille") Adherent adhrent)
+{
+//appel de la fonction rechercher Id adherent
+List<Adherent> listeVille=adherentService.findAdherentByVille(adhrent);
+
+if(listeVille!=null)
+{
+//mettre le résultat de la recherche dans le modele
+modele.addAttribute("listeVille", listeVille);
+
+//retour sur la jsp voulue
+return "rechercheVille";
+}
+else
+{
+return "rechercheVille";
+}
+}
+
+
 	
 
 }
