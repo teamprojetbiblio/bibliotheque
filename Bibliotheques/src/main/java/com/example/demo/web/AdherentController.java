@@ -42,13 +42,15 @@ public class AdherentController {
 
 	/////affichage de la liste
 	@RequestMapping(value="/listeAdherent", method=RequestMethod.GET)
-	public ModelAndView afficherListAdherent()
+	public ModelAndView afficherListAdherent(Model modele)
 	{
 		//appel de la fonction getAll
 		List<Adherent> listeAdhe=adherentService.getAllAdhe();
 		
+		//modele.addAttribute("listeAdherent", listeAdhe);
+		
 		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
-		return new ModelAndView("accueilAdherent","listeAdherent",listeAdhe);
+		return new ModelAndView("accueilAdherent","listeAdherent", listeAdhe);
 	}
 	
 	
@@ -177,7 +179,7 @@ public String updateLinkAdh(Model modele, @RequestParam("pId") long id)
 
 
 //////lien de suppression :
-
+@RequestMapping(value = "/deleteLinkAdh/{pId}",method = RequestMethod.GET)
 public String deleteLinkAdh(Model modele, @PathVariable ("pId") long id)
 {
 	//instantiation d'un adherent

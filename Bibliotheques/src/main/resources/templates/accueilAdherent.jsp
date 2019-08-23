@@ -67,8 +67,8 @@
 					<td>${e.adresse}</td>
 					<td>${e.ville}</td>
 					<td>${e.telephone}</td>
-					<td><a href="${pageContext.request.contextPath}/adhController/deleteLinkAdh/${e.id_adh}">Supprimer</a></td>
-					<td><a href="${pageContext.request.contextPath}/adhController/updateLinkAdh/${e.id_adh}">Supprimer</a></td>
+					<td></td>
+					<td></td>
 				</tr>
 			</c:forEach>
 			
