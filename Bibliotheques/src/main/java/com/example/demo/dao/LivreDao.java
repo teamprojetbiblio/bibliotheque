@@ -11,4 +11,6 @@ import com.example.demo.entities.Livre;
 public interface LivreDao extends JpaRepository<Livre, Long>{
 	@Query("select l from Livre l where l.titre like %:x%")
 	public Page<Livre> chercher (@Param("x")String mc, Pageable pageable);
+	
+	public Livre findById(long id);
 	}

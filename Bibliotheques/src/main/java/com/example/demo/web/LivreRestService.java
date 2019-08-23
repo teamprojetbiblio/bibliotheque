@@ -22,16 +22,18 @@ import com.example.demo.entities.Livre;
 public class LivreRestService {
 
 	@Autowired
-	private LivreDao livreDao;
+	private LivreDao livre_dao;
+	
+	Livre livre;
 
 	@RequestMapping(value = "/livres", method = RequestMethod.GET)
-	public List<Livre> getContact() {
-		return livreDao.findAll();
+	public List<Livre> getLivres() {
+		return livre_dao.findAll();
 	}
 
 	@RequestMapping(value = "/livres/{id}", method = RequestMethod.GET)
 	public Livre getLivres(@PathVariable Long id) {
-		return livreDao.findById(id).get();
+		return livre_dao.findById(id).get();
 	}
 
 	@RequestMapping(value = "/livresPages", method = RequestMethod.GET)
@@ -40,31 +42,30 @@ public class LivreRestService {
 			@RequestParam(name = "mc", defaultValue = "") String mc,
 			@RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "size", defaultValue = "5") int size) {
-		Page<Livre> p = livreDao.chercher(mc, new PageRequest(page, size));
+		Page<Livre> p = livre_dao.chercher(mc, new PageRequest(page, size));
 		return p;
 	}
 
 	@RequestMapping(value = "/saveLivre", method = RequestMethod.POST)
 	public Livre save(@RequestBody Livre livre) {
-		return livreDao.save(livre);
+		return livre_dao.save(livre);
 
 	}
 
 	@RequestMapping(value = "/updatelivre", method = RequestMethod.PUT)
 	public Livre UpdateLivre(@RequestBody Livre livre) {
-		return livreDao.save(livre);
+		return livre_dao.save(livre);
 
 	}
 
-	@RequestMapping(value = "/livre/{id}", method = RequestMethod.DELETE)
-	public void DeleteContacts(@PathVariable Long id) {
-		livreDao.deleteById(id);
-		
-	}
-	@RequestMapping(value="/deleteLivre/{id}", method=RequestMethod.DELETE)
-    public void delete(@PathVariable Long id){
-         livreDao.deleteById(id);
-         
-    }
-	
+//	@RequestMapping(value = "/livre/{id}", method = RequestMethod.DELETE)
+//	public void DeleteContacts(@PathVariable Long id) {
+//		livre_dao.deleteById(id);
+//		
+//	}
+//	@RequestMapping(value="/deleteLivre/{id}", method=RequestMethod.DELETE)
+//    public void delete(@PathVariable Long id){
+//         livre_dao.deleteById(id);
+//         
+//    }
 }
