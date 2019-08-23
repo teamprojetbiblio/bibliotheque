@@ -25,17 +25,17 @@
 <form:form modelAttribute="adhModif"   method="POST" action="adhController/updateAdhSubmit">
 
 <br/>
-<form:label path="firstName">nom</form:label>
-<form:input path="firstName" required="required"/>
+<form:label path="id_adh">id_adh</form:label>
+<form:input path="id_adh" required="required"/>
 <br/>
-<form:label path="lastName">prenom</form:label>
-<form:input path="lastName" required="required"/>
+<form:label path="nom">nom</form:label>
+<form:input path="nom" required="required"/>
+<br/>
+<form:label path="prenom">prenom</form:label>
+<form:input path="prenom" required="required"/>
 <br/>
 <form:label path="email">email</form:label>
-<form:input path="email" required="required"/>
-<br/>
-<form:label path="password">mdp</form:label>
-<form:input path="password" required="required"/>
+<form:input type=" path="email" required="required"/>
 <br/>
 <input type="submit" value="Register">
 
