@@ -13,7 +13,6 @@ public class BibliothequesApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(BibliothequesApplication.class, args);
 	}
-<<<<<<< HEAD
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -21,6 +20,5 @@ public class BibliothequesApplication implements CommandLineRunner {
 		
 	}
 
-=======
->>>>>>> refs/remotes/origin/insertBook
+
 }
