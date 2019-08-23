@@ -42,27 +42,30 @@ public class AdherentController {
 
 	/////affichage de la liste
 	@RequestMapping(value="/listeAdherent", method=RequestMethod.GET)
-	public ModelAndView afficherListAdherent(Model modele)
+	public String afficherListAdherent(Model modele)
 	{
 		//appel de la fonction getAll
 		List<Adherent> listeAdhe=adherentService.getAllAdhe();
 		
-		//modele.addAttribute("listeAdherent", listeAdhe);
+		modele.addAttribute("listeAdherent", listeAdhe);
+		
+		modele.addAttribute("adhAjout", new Adherent());
 		
 		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
-		return new ModelAndView("accueilAdherent","listeAdherent", listeAdhe);
+		return "accueilAdherent";
+		
 	}
 	
 	
 	/////ajout dans la liste
 			//afficher le formulaire
-	@RequestMapping(value="/addAdhAffiche", method = RequestMethod.GET)
+	/*@RequestMapping(value="/addAdhAffiche", method = RequestMethod.GET)
 	public  ModelAndView addAdhAffiche()
 	{
 	
 		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
 		return new ModelAndView("ajoutAdherent","adhAjout",new Adherent());
-	}
+	}*/
 	
 			//soumettre le formulaire
 	@RequestMapping(value="/addAdhSubmit",method = RequestMethod.POST)
