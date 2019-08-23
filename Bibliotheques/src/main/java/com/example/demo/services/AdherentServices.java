@@ -29,7 +29,7 @@ public class AdherentServices {
 	//methode recherche adherent par id
 	public Adherent findAdherentById(long id)
 	{
-		return adherentDao.findById(id).get();
+		return adherentDao.getOne(id);
 	}
 	
 	//methode ajouter un adherent
