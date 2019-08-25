@@ -60,7 +60,7 @@
   <br>
 
 
-
+<button type="button" class="btn btn-secondary"><a href="/adhController/addAdhAffiche" style="color: white;">Aller au formulaire d'ajout</a></button>
 
         <div class="card mb-3">
           <div class="card-header">

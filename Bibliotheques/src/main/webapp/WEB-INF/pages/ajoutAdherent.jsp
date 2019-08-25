@@ -9,11 +9,25 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sb-admin.css">
+
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCSS.css">
+
 </head>
 <body>
 
-<h1 style="text-align: center;color: blue;">Formulaire d'ajout</h1>
-  
+<div class="box">
+<br/>
+<br/>
+<h1 style="text-align: center;color: blue; font-size: 34px;">Formulaire d'ajout</h1>
+  <br/>
+  <br/>
   <div align="center">
 
 
@@ -21,33 +35,53 @@
 
 
 <br/>
-<form:label path="nom">nom</form:label>
+<div >
+<form:label path="nom" id="nom">Nom :  </form:label>
 <form:input path="nom" required="required"/>
-<br/>
-<form:label path="prenom">prenom</form:label>
+</div>
+<div >
+<form:label path="prenom" id="prenom">Prenom : </form:label>
 <form:input path="prenom" required="required"/>
+</div>
 <br/>
-<form:label path="email">email</form:label>
+<br/>
+
+<div >
+<form:label path="email" id="email">Email :  </form:label>
 <form:input path="email" required="required"/>
-<br/>
-<form:label path="password">password</form:label>
-<form:input path="password" required="required"/>
-<br/>
-<form:label path="adresse">adresse</form:label>
-<form:input path="adresse" required="required"/>
-<br/>
-<form:label path="ville">ville</form:label>
-<form:input path="ville" required="required"/>
-<br/>
-<form:label path="telephone">telephone</form:label>
-<form:input path="telephone" required="required"/>
-<br/>
-<input type="submit" value="Ajouter">
-
-</form:form>
-
 </div>
 
+<div>
+<form:label path="password" id="password">Password :</form:label>
+<form:input path="password" required="required"/>
+</div>
+<br/>
+<br/>
+<div>
+<form:label path="adresse" id="adresse">Adresse :</form:label>
+<form:input path="adresse" required="required"/>
+</div>
+<div>
+<form:label path="ville" id="ville">Ville :</form:label>
+<form:input path="ville" required="required"/>
+</div>
+<br/>
+<br/>
+<div>
+<form:label path="telephone" id="telephone">Telephone :</form:label>
+<form:input path="telephone" required="required"/>
+</div>
+<br/>
+<br/>
+<div>
+<button type="button"  id="bout" class="btn btn-primary" value="Ajouter">Ajouter un adhérent</button>
+</div>
+
+</form:form>
+<br/>
+<br/>
+</div>
+</div>
 
 </body>
 </html>
