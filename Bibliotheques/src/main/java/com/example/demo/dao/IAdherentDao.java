@@ -20,5 +20,9 @@ public interface IAdherentDao extends JpaRepository<Adherent, Long> {
 	@Query("SELECT adh FROM Adherent adh WHERE adh.ville=:x")
 	public List<Adherent> rechParVille(@Param("x") String mcV );
 	
+	//Vérification connexion adhérent (mail+password)
+	@Query("select a FROM Adherent a where a.email=:x and a.password=:y")
+	public Adherent checkLog(@Param("x") String email, @Param("y") String psw);
+	
 
 }

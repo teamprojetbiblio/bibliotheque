@@ -77,4 +77,9 @@ public class AdherentRestService {
 				return listAdhe;
 	}
 	
+	@RequestMapping(value = "/chercherAdherent", method = RequestMethod.GET)
+	public Adherent chercherAdherent(@RequestParam(name="email") String email,
+			@RequestParam(name="psw")String psw) {
+		return adherentDao.checkLog(email,psw);
+	}
 }
