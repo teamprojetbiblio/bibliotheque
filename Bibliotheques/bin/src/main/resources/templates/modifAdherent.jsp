@@ -22,12 +22,11 @@
   <div align="center">
 
 
-<form:form modelAttribute="adhModif"   method="POST" action="updateAdhSubmit">
+<form:form modelAttribute="adhModif"   method="POST" action="adhController/updateAdhSubmit">
 
 <br/>
-<form:label path="id_adh">id</form:label>
-<form:input path="id_adh" />
-
+<form:label path="id_adh">id_adh</form:label>
+<form:input path="id_adh" required="required"/>
 <br/>
 <form:label path="nom">nom</form:label>
 <form:input path="nom" required="required"/>
@@ -50,7 +49,9 @@
 <form:label path="telephone">telephone</form:label>
 <form:input path="telephone" required="required"/>
 <br/>
-<input type="submit" value="Modifier">
+<input type="submit" value="Register">
+
+
 
 </form:form>
 
