@@ -107,9 +107,10 @@ public class AdherentDao implements IAdherentDao  {
 	@Override
 	public <S extends Adherent> S save(S entity) {
 		
-		em.persist(entity);
+		//em.persist(entity);
 		
-		return entity;
+		//return entity;
+		return adherentDao.save(entity);
 	}
 
 
