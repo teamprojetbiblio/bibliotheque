@@ -1,14 +1,14 @@
 package com.example.demo.dao;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.example.demo.entities.Categorie;
-import com.example.demo.entities.Livre;
 
 public interface CategorieDao extends JpaRepository<Categorie, Long>{
-	
+	@Query( "select c from Livre c where c.categorie.id_cat like %:x%" )
+	public List <Categorie> getCategorie(@Param("x" )Long id);
 	}

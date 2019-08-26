@@ -3,7 +3,6 @@ package com.example.demo.entities;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -51,9 +50,6 @@ public class Categorie implements Serializable {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	
-	
-	
 	public List<Livre> getListeLivre() {
 		return listeLivre;
 	}
@@ -65,7 +61,4 @@ public class Categorie implements Serializable {
 	public String toString() {
 		return "Categorie [id_cat=" + id_cat + ", libelle=" + libelle + "]";
 	}
-	
-	
-
 }
