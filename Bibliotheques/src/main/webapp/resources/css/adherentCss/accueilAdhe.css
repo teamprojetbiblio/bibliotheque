@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+
+body 
+{
+	margin: 30px 30px;
+}
+
+
+th
+{
+	text-align: center;
+	font-weight: bold;
+		font-size: 19px;
+	
+	}
+
+td
+{
+	text-align: center;
+		font-weight: bold;
+	font-size: 16px;
+	
+}
+
+tr
+{
+	background-color:  #f2f3f4 ;
+}
