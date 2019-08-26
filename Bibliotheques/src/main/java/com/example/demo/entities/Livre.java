@@ -28,8 +28,16 @@ public class Livre implements Serializable {
 	private String titre;
 	private String auteur;
 	private String editeur;
-	@Lob
 	private String imgLivre;
+	private String description;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	// association livre/exemplaire:
 	@OneToMany(mappedBy = "livre", fetch = FetchType.LAZY)
@@ -43,7 +51,6 @@ public class Livre implements Serializable {
 
 	// constructeurs
 	public Livre() {
-		super();
 	}
 
 	public Livre(String titre, String auteur, String editeur) {
@@ -53,12 +60,13 @@ public class Livre implements Serializable {
 		this.editeur = editeur;
 	}
 
-	public Livre(String titre, String auteur, String editeur, String imgLivre) {
-		super();
+	public Livre(String titre, String auteur, String editeur, String imgLivre, String description) {
 		this.titre = titre;
 		this.auteur = auteur;
 		this.editeur = editeur;
 		this.imgLivre = imgLivre;
+		this.description = description;
+
 	}
 
 	// getters et setters

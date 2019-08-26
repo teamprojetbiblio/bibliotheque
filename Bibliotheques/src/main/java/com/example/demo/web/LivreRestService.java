@@ -25,7 +25,7 @@ public class LivreRestService {
 	private LivreDao livreDao;
 
 	@RequestMapping(value = "/livres", method = RequestMethod.GET)
-	public List<Livre> getContact() {
+	public List<Livre> getLivres() {
 		return livreDao.findAll();
 	}
 
@@ -57,7 +57,7 @@ public class LivreRestService {
 	}
 
 	@RequestMapping(value = "/livre/{id}", method = RequestMethod.DELETE)
-	public void DeleteContacts(@PathVariable Long id) {
+	public void Deletelivre(@PathVariable Long id) {
 		livreDao.deleteById(id);
 		
 	}
