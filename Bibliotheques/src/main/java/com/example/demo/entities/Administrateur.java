@@ -33,11 +33,21 @@ public class Administrateur implements Serializable {
 		this.mdp = mdp;
 	}
 	
+	public Administrateur(long id_adm, String nom, String prenom, String email, String mdp) {
+		super();
+		this.id_adm = id_adm;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.mdp = mdp;
+	}
+	
+	
 	//getters et setters
-	public long getId_ad() {
+	public long getId_adm() {
 		return id_adm;
 	}
-	public void setId_ad(long id_adm) {
+	public void setId_adm(long id_adm) {
 		this.id_adm = id_adm;
 	}
 	public String getNom() {
