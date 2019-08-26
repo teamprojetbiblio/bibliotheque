@@ -16,33 +16,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="livres")
+@Table(name = "livres")
 public class Livre implements Serializable {
-	
-	//attributs
+
+	// attributs
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_liv;
 	private String titre;
 	private String auteur;
 	private String editeur;
 	@Lob
-	private byte [] imgLivre;
-	
-	//association livre/exemplaire:
-	@OneToMany(mappedBy="livre",fetch=FetchType.LAZY)
+	private String imgLivre;
+
+	// association livre/exemplaire:
+	@OneToMany(mappedBy = "livre", fetch = FetchType.LAZY)
 	private List<Exemplaire> listeExemplaire;
-	
-	//association categorie/livre:
+
+	// association categorie/livre:
 	@ManyToOne
-	@JoinColumn(name="cat_id" , referencedColumnName="id_cat")
+	@JoinColumn(name = "cat_id", referencedColumnName = "id_cat")
 	private Categorie categorie;
-	
-	//constructeurs
+
+	// constructeurs
 	public Livre() {
 		super();
 	}
-
 
 	public Livre(String titre, String auteur, String editeur) {
 		super();
@@ -51,8 +50,7 @@ public class Livre implements Serializable {
 		this.editeur = editeur;
 	}
 
-
-	public Livre(String titre, String auteur, String editeur, byte[] imgLivre) {
+	public Livre(String titre, String auteur, String editeur, String imgLivre) {
 		super();
 		this.titre = titre;
 		this.auteur = auteur;
@@ -60,90 +58,67 @@ public class Livre implements Serializable {
 		this.imgLivre = imgLivre;
 	}
 
-
-	//getters et setters
+	// getters et setters
 	public long getId_liv() {
 		return id_liv;
 	}
-
 
 	public void setId_liv(long id_liv) {
 		this.id_liv = id_liv;
 	}
 
-
 	public String getTitre() {
 		return titre;
 	}
-
 
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
 
-
 	public String getAuteur() {
 		return auteur;
 	}
-
 
 	public void setAuteur(String auteur) {
 		this.auteur = auteur;
 	}
 
-
 	public String getEditeur() {
 		return editeur;
 	}
-
 
 	public void setEditeur(String editeur) {
 		this.editeur = editeur;
 	}
 
-
-	public byte[] getImgLivre() {
+	public String getImgLivre() {
 		return imgLivre;
 	}
 
-
-	public void setImgLivre(byte[] imgLivre) {
+	public void setImgLivre(String imgLivre) {
 		this.imgLivre = imgLivre;
 	}
 
-
-	
 	public List<Exemplaire> getListeExemplaire() {
 		return listeExemplaire;
 	}
-
 
 	public void setListeExemplaire(List<Exemplaire> listeExemplaire) {
 		this.listeExemplaire = listeExemplaire;
 	}
 
-
 	public Categorie getCategorie() {
 		return categorie;
 	}
-
 
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
 
-
-	//toString
+	// toString
 	@Override
 	public String toString() {
 		return "Livre [id_liv=" + id_liv + ", titre=" + titre + ", auteur=" + auteur + ", editeur=" + editeur
-				+ ", imgLivre=" + Arrays.toString(imgLivre) + "]";
+				+ ", imgLivre=" + imgLivre + "]";
 	}
-	
-	
-	
-	
-	
-	
-
 }
