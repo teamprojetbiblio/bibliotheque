@@ -28,7 +28,7 @@
 
   <br>
 
-<form action="" method="get">
+<form action="afficherAddAdmin" method="get">
 <button type="submit" class="btn btn-secondary">Aller au formulaire d'ajout</button>
 </form>
 <br/>
@@ -58,8 +58,8 @@
 					<td>${e.prenom }</td>
 					<td>${e.email}</td>
 					<td>${e.mdp}</td>
-					<td><a href="">Supprimer</a></td>
-					<td><a href="">Editer</a></td>					
+					<td><a href="${pageContext.request.contextPath}/admController/deleteLinkAdm/${e.id_adm}">Supprimer</a></td>
+					<td><a href="${pageContext.request.contextPath}/admController/updateLinkAdmin?pId=${e.id_adm}">Editer</a></td>					
 				</tr>
 			</c:forEach>			
 			</tbody>

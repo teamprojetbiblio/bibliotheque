@@ -6,7 +6,7 @@ body
 }
 
 
-th
+#dataTable th
 {
 	text-align: center;
 	font-weight: bold;
@@ -14,7 +14,7 @@ th
 	
 	}
 
-td
+#dataTable td
 {
 	text-align: center;
 		font-weight: bold;
@@ -22,7 +22,7 @@ td
 	
 }
 
-tr
+#dataTable tr
 {
 	background-color:  #f2f3f4 ;
 }
