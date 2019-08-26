@@ -25,9 +25,8 @@
 <form:form modelAttribute="adhModif"   method="POST" action="updateAdhSubmit">
 
 <br/>
-<form:label path="id_adh">id</form:label>
-<form:input path="id_adh" />
-
+<form:label path="id_adh">id_adh</form:label>
+<form:input path="id_adh" required="required"/>
 <br/>
 <form:label path="nom">nom</form:label>
 <form:input path="nom" required="required"/>
