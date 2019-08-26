@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "livres")
 public class Livre implements Serializable {
@@ -31,6 +33,7 @@ public class Livre implements Serializable {
 
 	// association livre/exemplaire:
 	@OneToMany(mappedBy = "livre", fetch = FetchType.LAZY)
+
 	private List<Exemplaire> listeExemplaire;
 
 	// association categorie/livre:

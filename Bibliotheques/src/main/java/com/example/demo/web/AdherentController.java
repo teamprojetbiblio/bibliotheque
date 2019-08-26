@@ -49,7 +49,7 @@ public class AdherentController {
 		
 		modele.addAttribute("listeAdherent", listeAdhe);
 		
-		modele.addAttribute("adhAjout", new Adherent());
+		//modele.addAttribute("adhAjout", new Adherent());
 		
 		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
 		return "accueilAdherent";
@@ -59,13 +59,13 @@ public class AdherentController {
 	
 	/////ajout dans la liste
 			//afficher le formulaire
-	/*@RequestMapping(value="/addAdhAffiche", method = RequestMethod.GET)
+	@RequestMapping(value="/addAdhAffiche", method = RequestMethod.GET)
 	public  ModelAndView addAdhAffiche()
 	{
 	
 		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
 		return new ModelAndView("ajoutAdherent","adhAjout",new Adherent());
-	}*/
+	}
 	
 			//soumettre le formulaire
 	@RequestMapping(value="/addAdhSubmit",method = RequestMethod.POST)
