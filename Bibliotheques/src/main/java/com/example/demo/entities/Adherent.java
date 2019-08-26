@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="adherents")
 public class Adherent implements Serializable {
@@ -29,6 +31,7 @@ public class Adherent implements Serializable {
 	private String telephone;
 	
 	//association adherents/emprunt
+	@JsonIgnore
 	@OneToMany(mappedBy="adherent",fetch=FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Emprunt> listeEmprunt;
 	
