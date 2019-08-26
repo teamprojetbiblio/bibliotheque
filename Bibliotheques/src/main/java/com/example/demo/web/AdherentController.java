@@ -82,6 +82,7 @@ public class AdherentController {
 			//mettre à jour la liste dans le modele
 			modele.addAttribute("listeAdherent",listeAdh );
 			
+			
 			//retour sur la jsp voulue
 			return "accueilAdherent";
 		}
@@ -146,6 +147,8 @@ if(adhOut!=null)
 	
 	//mettre la liste à jour dans le modele
 	modele.addAttribute("listeAdherent",listeAdh );
+	modele.addAttribute("adhAjout", new Adherent());
+
 	
 	//retour sur la jsp voulue
 	return "accueilAdherent";
@@ -198,6 +201,9 @@ public String deleteLinkAdh(Model modele, @PathVariable ("pId") long id)
 	
 	//mettre la liste a jour dans le modele
 	modele.addAttribute("listeAdherent",listeAdh);
+	
+	modele.addAttribute("adhAjout", new Adherent());
+
 	
 	//retour a la jsp voulue
 	return "accueilAdherent";

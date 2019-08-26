@@ -108,6 +108,9 @@ public class AdminController {
 		//remise à jour du modele :
 		modele.addAttribute("listeAdmin", listeAdmin);
 		
+		modele.addAttribute("admAdd", new Administrateur());
+
+		
 		//retourne à la JSP voulue :
 		return "accueilAdmin";	
 		
@@ -165,6 +168,9 @@ public class AdminController {
 			
 			//remise à jour du modele:
 			modele.addAttribute("listeAdmin", listeAdmin);
+			
+			modele.addAttribute("admAdd", new Administrateur());
+
 			
 			return "accueilAdmin";
 		}
