@@ -5,15 +5,19 @@ import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.entities.Administrateur;
 
+@Repository
+@Transactional
 public class AdminDao implements IAdminDao {
 	
 	//injection de dépendance de l'entity manager :
@@ -100,6 +104,10 @@ public class AdminDao implements IAdminDao {
 	@Override
 	public <S extends Administrateur> S save(S entity) {
 		// TODO Auto-generated method stub
+		
+		//em.persist(entity);
+		
+				//return entity;
 		return adminDao.save(entity);
 	}
 
