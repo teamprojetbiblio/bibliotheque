@@ -136,3 +136,7 @@ public class Adherent implements Serializable {
 	
 }
 
+
+
+
+

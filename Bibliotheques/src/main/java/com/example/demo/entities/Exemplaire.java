@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="exemplaires")
 public class Exemplaire {
@@ -23,6 +25,7 @@ public class Exemplaire {
 	private String etat;
 	
 	//association emprunt/exemplaire:
+	@JsonIgnore
 	@OneToMany(mappedBy="exemplaire",fetch=FetchType.LAZY)
 	private List<Emprunt> listeEmprunt;
 	

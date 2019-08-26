@@ -107,9 +107,10 @@ public class AdherentDao implements IAdherentDao  {
 	@Override
 	public <S extends Adherent> S save(S entity) {
 		
-		em.persist(entity);
+		//em.persist(entity);
 		
-		return entity;
+		//return entity;
+		return adherentDao.save(entity);
 	}
 
 
@@ -198,7 +199,12 @@ public class AdherentDao implements IAdherentDao  {
 		return adherentDao.rechParVille(mcN);
 	}
 
-	
+	@Override
+	public Adherent checkLog(String email, String psw) {
+		// TODO Auto-generated method stub
+		return adherentDao.checkLog(email,psw);
+	}
+
 
 	
 	
