@@ -35,31 +35,31 @@ public class EmpruntsController {
 		if(filtre.equals("all")) {
 			listeEmprunts=empruntDao.findAll();
 			model.addAttribute("listeEmprunts", listeEmprunts);
-			System.out.println("ok");
+			
 		}else if(filtre.equals("idEmp")) {
 			listeEmprunts=empruntDao.chercherParIdEmp(mc);
 			model.addAttribute("listeEmprunts", listeEmprunts);
-			System.out.println("ok4");
+			
 		}else if(filtre.equals("idAdh")) {
 			listeEmprunts=empruntDao.chercherParIdAdh(mc);
 			model.addAttribute("listeEmprunts", listeEmprunts);
-			System.out.println("ok5");
+			
 		}else if(filtre.equals("nomAdh")) {
 			listeEmprunts=empruntDao.chercherParAdh(mc);
 			model.addAttribute("listeEmprunts", listeEmprunts);
-			System.out.println("ok2");
+			
 		}else if(filtre.equals("titreLiv")) {
 			listeEmprunts=empruntDao.chercherParLivre(mc);
 			model.addAttribute("listeEmprunts", listeEmprunts);
-			System.out.println("ok3");
+			
 		}else if(filtre.equals("idExem")) {
 			listeEmprunts=empruntDao.chercherParIdExemp(mc);
 			model.addAttribute("listeEmprunts", listeEmprunts);
-			System.out.println("ok3");
+			
 		}else if(filtre.equals("dateEmp")) {
 			listeEmprunts=empruntDao.chercherParDateEmp(mc);
 			model.addAttribute("listeEmprunts", listeEmprunts);
-			System.out.println("ok3");
+			
 		}
 		
 		return "listeEmprunts";

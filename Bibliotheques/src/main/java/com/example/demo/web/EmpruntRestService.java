@@ -39,6 +39,10 @@ public class EmpruntRestService {
 		Page<Emprunt> p = empruntDao.chercher(mc, PageRequest.of(page, size));
 		return p;
 	}
+	@RequestMapping(value = "/listeEmpruntsParAdh", method = RequestMethod.GET)
+	public List<Emprunt> getEmpruntAdh(@RequestParam(name="adhId") Long id) {
+		return empruntDao.chercherParSession(id);
+	}
 //	@RequestMapping(value = "/chercherEmprunts", method = RequestMethod.GET)
 //	public Page<Emprunt> chercher(@RequestParam(name="mc",defaultValue="") long mc,
 //			@RequestParam(name="page",defaultValue="0")int page,
