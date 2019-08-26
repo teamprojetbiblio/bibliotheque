@@ -76,6 +76,7 @@ public class LivreRestService {
 	public List<Categorie> getCategories() {
 		return categorie_dao.findAll();
 	}
+	
 	@RequestMapping(value = "/categories/{id}", method = RequestMethod.GET)
 	public List<Categorie> byCategories(@PathVariable Long id) {
 		return categorie_dao.getCategorie(id);

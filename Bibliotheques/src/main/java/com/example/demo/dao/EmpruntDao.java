@@ -33,6 +33,7 @@ public interface EmpruntDao extends JpaRepository<Emprunt, Long> {
 	@Query("select e from Emprunt e where str(e.dateEmprunt) like %:x%")
 	public List<Emprunt> chercherParDateEmp (@Param("x")String mc);
 	
+	
 	@Query("select e from Emprunt e where e.adherent.id_adh =:x")
 	public List<Emprunt> chercherParSession (@Param("x")long adhId);
 	
