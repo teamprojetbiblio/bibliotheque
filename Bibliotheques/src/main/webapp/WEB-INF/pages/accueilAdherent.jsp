@@ -52,9 +52,77 @@
 
   <br>
 
-<form action="addAdhAffiche" method="get">
-<button type="submit" class="btn btn-secondary">Aller au formulaire d'ajout</button>
-</form>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+ Ajouter un adherent
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form:form modelAttribute="adhAjout"   method="POST" action="addAdhSubmit">
+
+
+<br/>
+<div >
+<form:label path="nom" id="nom">Nom :  </form:label>
+<form:input path="nom" required="required"/>
+</div>
+<div >
+<form:label path="prenom" id="prenom">Prenom : </form:label>
+<form:input path="prenom" required="required"/>
+</div>
+<br/>
+<br/>
+
+<div >
+<form:label path="email" id="email">Email :  </form:label>
+<form:input path="email" required="required"/>
+</div>
+
+<div>
+<form:label path="password" id="password">Password :</form:label>
+<form:input path="password" required="required"/>
+</div>
+<br/>
+<br/>
+<div>
+<form:label path="adresse" id="adresse">Adresse :</form:label>
+<form:input path="adresse" required="required"/>
+</div>
+<div>
+<form:label path="ville" id="ville">Ville :</form:label>
+<form:input path="ville" required="required"/>
+</div>
+<br/>
+<br/>
+<div>
+<form:label path="telephone" id="telephone">Telephone :</form:label>
+<form:input path="telephone" required="required"/>
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+<button type="submit" class="btn btn-primary" value="Ajouter">Ajouter un adhérent</button>
+</div>
+
+</form:form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <br/>
 <br/>
         <div class="card mb-3">
