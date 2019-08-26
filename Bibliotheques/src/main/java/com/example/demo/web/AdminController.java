@@ -42,6 +42,8 @@ public class AdminController {
 		//stockage de la liste dans le modele  :
 		modele.addAttribute("listeAdmin", listeAdmin);
 		
+		modele.addAttribute("admAdd", new Administrateur());
+		
 		//retour sur la page JSP:
 		return "accueilAdmin";
 		}
@@ -50,7 +52,7 @@ public class AdminController {
 	
 	////////Methode pour ajouter un administrateur :
 			////Affichage du formulaire :
-	@RequestMapping(value="/afficherAddAdmin", method = RequestMethod.GET)
+	/*@RequestMapping(value="/afficherAddAdmin", method = RequestMethod.GET)
 	public ModelAndView afficherAddAdmin(Model modele)
 	{
 		//insérer un admin dans le modele:
@@ -59,7 +61,7 @@ public class AdminController {
 		//retourner la page jsp :
 		//return "ajoutAdmin";
 		return new ModelAndView("ajoutAdmin","admAdd", new Administrateur());
-	}
+	}*/
 	
 	////Soumettre le formulaire :
 	@RequestMapping(value="/submitAddAdmin", method = RequestMethod.POST)

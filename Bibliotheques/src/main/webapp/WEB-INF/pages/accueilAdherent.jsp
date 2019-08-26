@@ -61,50 +61,46 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Formulaire d'ajout d'un adherent</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+      
+     
+<br/>
+
        <form:form modelAttribute="adhAjout"   method="POST" action="addAdhSubmit">
 
 
 <br/>
 <div >
-<form:label path="nom" id="nom">Nom :  </form:label>
+<form:label path="nom" style="float:left;">Nom :  </form:label>
 <form:input path="nom" required="required"/>
 </div>
 <div >
-<form:label path="prenom" id="prenom">Prenom : </form:label>
+<form:label path="prenom">Prenom : </form:label>
 <form:input path="prenom" required="required"/>
 </div>
-<br/>
-<br/>
-
 <div >
-<form:label path="email" id="email">Email :  </form:label>
+<form:label path="email" style="float:left;">Email :  </form:label>
 <form:input path="email" required="required"/>
 </div>
-
 <div>
-<form:label path="password" id="password">Password :</form:label>
+<form:label path="password">Password :</form:label>
 <form:input path="password" required="required"/>
 </div>
-<br/>
-<br/>
 <div>
-<form:label path="adresse" id="adresse">Adresse :</form:label>
+<form:label path="adresse" style="float:left;">Adresse :</form:label>
 <form:input path="adresse" required="required"/>
 </div>
 <div>
-<form:label path="ville" id="ville">Ville :</form:label>
+<form:label path="ville">Ville :</form:label>
 <form:input path="ville" required="required"/>
 </div>
-<br/>
-<br/>
 <div>
-<form:label path="telephone" id="telephone">Telephone :</form:label>
+<form:label path="telephone" style="float:left;">Telephone :</form:label>
 <form:input path="telephone" required="required"/>
 </div>
 <br/>
@@ -115,6 +111,7 @@
 </div>
 
 </form:form>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -156,7 +153,7 @@
 					<td>${e.adresse}</td>
 					<td>${e.ville}</td>
 					<td>${e.telephone}</td>
-					<td><a href="${pageContext.request.contextPath}/adhController/deleteLinkAdh/${e.id_adh}">Supprimer</a></td>
+					<td><a href="${pageContext.request.contextPath}/adhController/deleteLinkAdh/${e.id_adh}"><i class="fas fa-archive" ></i></a></td>
 					<td><a href="${pageContext.request.contextPath}/adhController/updateLinkAdh?pId=${e.id_adh}">Editer</a></td>					
 				</tr>
 			</c:forEach>			

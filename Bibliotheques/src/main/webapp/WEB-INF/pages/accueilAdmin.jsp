@@ -26,11 +26,70 @@
  <div class="container">
 
 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+ Ajouter un administrateur
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un admin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form:form modelAttribute="admAdd"   method="POST" action="submitAddAdmin">
+
+
+<br/>
+
+<br/>
+<div >
+<form:label path="nom" id="nom">Nom :  </form:label>
+<form:input path="nom" required="required"/>
+</div>
+<div >
+<form:label path="prenom" id="prenom">Prenom : </form:label>
+<form:input path="prenom" required="required"/>
+</div>
+<br/>
+<br/>
+
+<div >
+<form:label path="email" id="email">Email :  </form:label>
+<form:input path="email" required="required"/>
+</div>
+
+<div>
+<form:label path="mdp" id="password">Mdp :</form:label>
+<form:input path="mdp" required="required"/>
+</div>
+
+<br/>
+<br/>
+<br/>
+<div>
+<button type="submit" class="btn btn-primary" value="Ajouter">Ajouter un administrateur</button>
+</div>
+
+</form:form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <br>
 
-<form action="afficherAddAdmin" method="get">
+<!--  <form action="afficherAddAdmin" method="get">
 <button type="submit" class="btn btn-secondary">Aller au formulaire d'ajout</button>
-</form>
+</form> -->
 <br/>
 <br/>
         <div class="card mb-3">
