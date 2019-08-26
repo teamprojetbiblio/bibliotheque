@@ -1,46 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%--  <%@ page language="java" contentType="text/html; charset=ISO-8859-1" --%>
+<%--     pageEncoding="ISO-8859-1"%> --%>
     
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%--     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%--     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  --%>
     
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1"/>
-<title>Insert title here</title>
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/all.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap-theme.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.min.css"> 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/sb-admin.css">
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta charset="utf-8"/> -->
+<!-- <title>Insert title here</title> -->
 
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<%-- 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/all.min.css"> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.css"> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap-theme.css"> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.min.css">  --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/sb-admin.css"> --%>
+
+
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
   
-  <link href="${pageContext.request.contextPath}/resources/css/adherentCss/ionicons.min.css" rel="stylesheet">
+<%--   <link href="${pageContext.request.contextPath}/resources/css/adherentCss/ionicons.min.css" rel="stylesheet"> --%>
   
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/accueilAdhe.css">
+<%--   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/accueilAdhe.css"> --%>
   
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
 
-</head>
-<body>
+<!-- </head> -->
+<!-- <body>  -->
 
 
   
   
-   <nav class="navbar navbar-dark bg-dark">
-  <ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" href="/adhController/listeAdherent">Liste des Adherents</a>
-  </li>
-</ul>
-</nav>
+ <%@ include file="fragments/header.html"%>
+ 
 
 
 <br/>
@@ -111,19 +107,12 @@
 
 
 
+<%@ include file="fragments/footer.html"%>
 
 
+<%-- <script src="${pageContext.request.contextPath}/resources/js/jQueryFile/jquery.min.js"></script> --%>
+<%-- <script src="${pageContext.request.contextPath}/resources/js/bootstrapFile/bootstrap.js"></script> --%>
 
-<script src="${pageContext.request.contextPath}/resources/js/jQueryFile/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrapFile/bootstrap.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/dataTables.bootstrap4.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/bootstrapFile/bootstrap.bundle.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jQueryFile/jquery.easing.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/Chart.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jQueryFile/jquery.dataTables.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/sb-admin.min.js"></script>
- <script src="${pageContext.request.contextPath}/resources/js/datatables-demo.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/chart-area-demo.js"></script>
 
 
 </body>

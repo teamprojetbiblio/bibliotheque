@@ -1,27 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" --%>
+<%--     pageEncoding="ISO-8859-1"%> --%>
     
-       <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-        <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%--        <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%--         <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%> --%>
     
     
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta charset="ISO-8859-1"> -->
+<!-- <title>Insert title here</title> -->
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/all.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap-theme.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.min.css"> 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/sb-admin.css">
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/all.min.css"> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.css"> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap-theme.css"> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrapFile/bootstrap.min.css">  --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/sb-admin.css"> --%>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/adherentCSS.css">
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/adherentCSS.css"> --%>
 
-</head>
-<body>
+<!-- </head> -->
+<!-- <body> -->
 
+ <%@ include file="fragments/header.html"%>
+ 
+ <br/>
+<br/>
 
 <div class="box">
 <br/>
@@ -75,6 +79,7 @@
 </div>
 <br/>
 <br/>
+<br/>
 <div>
 <button type="submit" class="btn btn-primary" value="Modifier">Modifier un adhérent</button>
 </div>
@@ -85,5 +90,7 @@
 </div>
 </div>
 
-</body>
-</html>
+<%@ include file="fragments/footer.html"%>
+
+<!-- </body> -->
+<!-- </html> -->
