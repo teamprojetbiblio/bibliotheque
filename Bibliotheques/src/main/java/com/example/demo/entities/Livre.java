@@ -40,6 +40,7 @@ public class Livre implements Serializable {
 	}
 
 	// association livre/exemplaire:
+	@JsonIgnore
 	@OneToMany(mappedBy = "livre", fetch = FetchType.LAZY)
 
 	private List<Exemplaire> listeExemplaire;

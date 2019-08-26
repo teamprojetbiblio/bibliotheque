@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dao.CategorieDao;
 import com.example.demo.dao.LivreDao;
+import com.example.demo.entities.Categorie;
 import com.example.demo.entities.Livre;
 
 @RestController
@@ -22,16 +24,17 @@ import com.example.demo.entities.Livre;
 public class LivreRestService {
 
 	@Autowired
-	private LivreDao livreDao;
+	private LivreDao livre_dao;
+	private CategorieDao categorie_dao;
 
 	@RequestMapping(value = "/livres", method = RequestMethod.GET)
 	public List<Livre> getLivres() {
-		return livreDao.findAll();
+		return livre_dao.findAll();
 	}
 
 	@RequestMapping(value = "/livres/{id}", method = RequestMethod.GET)
 	public Livre getLivres(@PathVariable Long id) {
-		return livreDao.findById(id).get();
+		return livre_dao.findById(id).get();
 	}
 
 	@RequestMapping(value = "/livresPages", method = RequestMethod.GET)
@@ -40,31 +43,36 @@ public class LivreRestService {
 			@RequestParam(name = "mc", defaultValue = "") String mc,
 			@RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "size", defaultValue = "5") int size) {
-		Page<Livre> p = livreDao.chercher(mc, PageRequest.of(page, size));
+		Page<Livre> p = livre_dao.chercher(mc, PageRequest.of(page, size));
 		return p;
 	}
 
 	@RequestMapping(value = "/saveLivre", method = RequestMethod.POST)
 	public Livre save(@RequestBody Livre livre) {
-		return livreDao.save(livre);
+		return livre_dao.save(livre);
 
 	}
 
 	@RequestMapping(value = "/updatelivre", method = RequestMethod.PUT)
 	public Livre UpdateLivre(@RequestBody Livre livre) {
-		return livreDao.save(livre);
+		return livre_dao.save(livre);
 
 	}
 
 	@RequestMapping(value = "/livre/{id}", method = RequestMethod.DELETE)
 	public void Deletelivre(@PathVariable Long id) {
-		livreDao.deleteById(id);
-		
+		livre_dao.deleteById(id);
+
 	}
-	@RequestMapping(value="/deleteLivre/{id}", method=RequestMethod.DELETE)
-    public void delete(@PathVariable Long id){
-         livreDao.deleteById(id);
-         
-    }
-	
+
+	@RequestMapping(value = "/deleteLivre/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable Long id) {
+		livre_dao.deleteById(id);
+
+	}
+	@RequestMapping(value = "/categories", method = RequestMethod.GET)
+	public List<Categorie> getCategories() {
+		return categorie_dao.findAll();
+	}
+
 }
