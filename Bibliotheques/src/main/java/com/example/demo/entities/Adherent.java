@@ -32,7 +32,9 @@ public class Adherent implements Serializable {
 	
 	//association adherents/emprunt
 	@JsonIgnore
+
 	@OneToMany(mappedBy="adherent",fetch=FetchType.LAZY)
+
 	private List<Emprunt> listeEmprunt;
 	
 	
@@ -135,8 +137,3 @@ public class Adherent implements Serializable {
 	
 	
 }
-
-
-
-
-
