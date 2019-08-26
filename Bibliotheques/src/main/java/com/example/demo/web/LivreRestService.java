@@ -40,7 +40,7 @@ public class LivreRestService {
 			@RequestParam(name = "mc", defaultValue = "") String mc,
 			@RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "size", defaultValue = "5") int size) {
-		Page<Livre> p = livreDao.chercher(mc, new PageRequest(page, size));
+		Page<Livre> p = livreDao.chercher(mc, PageRequest.of(page, size));
 		return p;
 	}
 

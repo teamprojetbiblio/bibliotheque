@@ -2,8 +2,10 @@
     pageEncoding="ISO-8859-1"%>
     
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     
+
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +27,6 @@
 
 </head>
 <body>
-
 
   
   
@@ -55,7 +56,7 @@
  <div class="container">
 
   <h2>Champs de recherche</h2>
-  <p>Filtrage réalisé sur tout les champs de la table</p>  
+  <p>Filtrage rÃ©alisÃ© sur tout les champs de la table</p>  
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
 
@@ -78,8 +79,8 @@
 			    <th>Adresse</th>
 			    <th>Ville</th>
 				<th>Numero de telephone</th>
-				<th>Supprimer un adhérent</th>
-				<th>Modifier un adhérent</th>
+				<th>Supprimer un adhÃ©rent</th>
+				<th>Modifier un adhÃ©rent</th>
 			</tr>
 </thead>
 <tbody id="myTable">
