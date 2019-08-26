@@ -25,6 +25,8 @@ public class LivreRestService {
 
 	@Autowired
 	private LivreDao livre_dao;
+	
+	@Autowired
 	private CategorieDao categorie_dao;
 
 	@RequestMapping(value = "/livres", method = RequestMethod.GET)
@@ -74,5 +76,8 @@ public class LivreRestService {
 	public List<Categorie> getCategories() {
 		return categorie_dao.findAll();
 	}
-
+	@RequestMapping(value = "/categories/{id}", method = RequestMethod.GET)
+	public List<Categorie> byCategories(@PathVariable Long id) {
+		return categorie_dao.getCategorie(id);
+	}
 }
