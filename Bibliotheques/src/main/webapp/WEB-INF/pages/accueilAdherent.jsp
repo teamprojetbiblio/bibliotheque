@@ -162,7 +162,7 @@
 					<td>${e.ville}</td>
 					<td>${e.telephone}</td>
 					<td><a href="${pageContext.request.contextPath}/adhController/deleteLinkAdh/${e.id_adh}"><i class="fas fa-archive" ></i></a></td>
-					<td><a href="${pageContext.request.contextPath}/adhController/updateLinkAdh?pId=${e.id_adh}">Editer</a></td>					
+					<td><a href="${pageContext.request.contextPath}/adhController/updateLinkAdh?pId=${e.id_adh}"><i class="fas fa-edit"></i></a></td>					
 				</tr>
 			</c:forEach>			
 			</tbody>
