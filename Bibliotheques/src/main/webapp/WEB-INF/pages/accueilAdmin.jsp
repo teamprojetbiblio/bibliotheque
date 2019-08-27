@@ -41,31 +41,32 @@
         </button>
       </div>
       <div class="modal-body">
-        <form:form modelAttribute="admAdd"   method="POST" action="submitAddAdmin">
+        <form:form modelAttribute="admAdd"   method="POST" action="submitAddAdmin" class="formU">
 
 
 <br/>
 
 <br/>
 <div >
-<form:label path="nom" id="nom">Nom :  </form:label>
-<form:input path="nom" required="required"/>
-</div>
-<div >
-<form:label path="prenom" id="prenom">Prenom : </form:label>
-<form:input path="prenom" required="required"/>
+<form:label path="nom" class="labelU">Nom :  </form:label>
+<form:input path="nom" class="inputU" required="required"/>
 </div>
 <br/>
 <br/>
-
 <div >
-<form:label path="email" id="email">Email :  </form:label>
-<form:input path="email" required="required"/>
+<form:label path="prenom" class="labelU" style="clear:left">Prenom : </form:label>
+<form:input path="prenom" class="inputU" required="required"/>
 </div>
-
+<br/>
+<div >
+<form:label path="email" class="labelU">Email :  </form:label>
+<form:input path="email" class="inputU" required="required"/>
+</div>
+<br/>
+<br/>
 <div>
-<form:label path="mdp" id="password">Mdp :</form:label>
-<form:input path="mdp" required="required"/>
+<form:label path="mdp" class="labelU" style="clear:left">Mdp :</form:label>
+<form:input path="mdp" class="inputU" required="required"/>
 </div>
 
 <br/>

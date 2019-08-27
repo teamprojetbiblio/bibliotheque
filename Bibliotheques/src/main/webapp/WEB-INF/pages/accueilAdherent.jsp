@@ -70,38 +70,46 @@
       
      
 <br/>
-
-       <form:form modelAttribute="adhAjout"   method="POST" action="addAdhSubmit">
+       <form:form modelAttribute="adhAjout"   method="POST" action="addAdhSubmit" class="formU">
 
 
 <br/>
 <div >
-<form:label path="nom" style="float:left;">Nom :  </form:label>
-<form:input path="nom" required="required"/>
+<form:label path="nom" class="labelU">Nom :  </form:label>
+<form:input path="nom" class="inputU" required="required"/>
 </div>
+<br/>
+<br/>
 <div >
-<form:label path="prenom">Prenom : </form:label>
-<form:input path="prenom" required="required"/>
+<form:label path="prenom" class="labelU" style="clear:left">Prenom : </form:label>
+<form:input path="prenom" class="inputU" required="required"/>
 </div>
+<br/>
 <div >
-<form:label path="email" style="float:left;">Email :  </form:label>
-<form:input path="email" required="required"/>
+<form:label path="email" class="labelU">Email :  </form:label>
+<form:input path="email" class="inputU" required="required"/>
 </div>
+<br/>
+<br/>
 <div>
-<form:label path="password">Password :</form:label>
-<form:input path="password" required="required"/>
+<form:label path="password" class="labelU">Password :</form:label>
+<form:input path="password" class="inputU" required="required"/>
 </div>
+<br/>
 <div>
-<form:label path="adresse" style="float:left;">Adresse :</form:label>
-<form:input path="adresse" required="required"/>
+<form:label path="adresse" class="labelU">Adresse :</form:label>
+<form:input path="adresse" class="inputU" required="required"/>
 </div>
+<br/>
+<br/>
 <div>
-<form:label path="ville">Ville :</form:label>
-<form:input path="ville" required="required"/>
+<form:label path="ville" style="clear:left;" class="labelU">Ville :</form:label>
+<form:input path="ville" class="inputU" required="required"/>
 </div>
+<br/>
 <div>
-<form:label path="telephone" style="float:left;">Telephone :</form:label>
-<form:input path="telephone" required="required"/>
+<form:label path="telephone" class="labelU">Telephone :</form:label>
+<form:input path="telephone" class="inputU" required="required"/>
 </div>
 <br/>
 <br/>
