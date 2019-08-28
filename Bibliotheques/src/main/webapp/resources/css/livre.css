@@ -60,3 +60,10 @@
 	float:right;
 	
 }
+#images{
+	width:100% !important;
+	height:auto !important;
+}
+#div_img{
+	width:60px;
+}

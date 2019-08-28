@@ -29,13 +29,13 @@ public class LivreRestService {
 	@Autowired
 	private CategorieDao categorie_dao;
 
-	@RequestMapping(value = "/livres", method = RequestMethod.GET)
-	public List<Livre> getLivres() {
+	@RequestMapping(value = "/livre", method = RequestMethod.GET)
+	public List<Livre> getLivs() {
 		return livre_dao.findAll();
 	}
 
 	@RequestMapping(value = "/livres/{id}", method = RequestMethod.GET)
-	public Livre getLivres(@PathVariable Long id) {
+	public Livre getLiv(@PathVariable Long id) {
 		return livre_dao.findById(id).get();
 	}
 
@@ -73,7 +73,7 @@ public class LivreRestService {
 
 	}
 	@RequestMapping(value = "/categories", method = RequestMethod.GET)
-	public List<Categorie> getCategories() {
+	public List<Categorie> getCatego() {
 		return categorie_dao.findAll();
 	}
 	@RequestMapping(value = "/categories/{id}", method = RequestMethod.GET)
