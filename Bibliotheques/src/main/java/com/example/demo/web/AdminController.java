@@ -1,7 +1,14 @@
 package com.example.demo.web;
 
+import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -33,9 +40,10 @@ public class AdminController {
 
 	/////////Methode affichage de la liste des administrateurs :
 	@RequestMapping(value="/listeAdmin",method = RequestMethod.GET)
-	public String afficherListAdmin(Model modele)
+	public String afficherListAdmin(Model modele, HttpSession session, Administrateur adm, @ModelAttribute("admLog") Administrateur adminIn,HttpServletResponse resp)
 	{
-		
+		if(session.getAttribute("adminIn")!=null)
+		{
 		//appel de la fonction getAll :
 		List<Administrateur> listeAdmin= adminService.getAllAdmin();
 		
@@ -46,6 +54,12 @@ public class AdminController {
 		
 		//retour sur la page JSP:
 		return "accueilAdmin";
+		}
+		else 
+		{
+		return "redirect:login";	
+			
+		}
 		}
 	
 	
@@ -93,11 +107,13 @@ public class AdminController {
 	
 	//supprimer un administrateur avec un lien
 	@RequestMapping(value="/deleteLinkAdm/{pId}",method = RequestMethod.GET)
-	public String deleteLinkAdm(Model modele, @PathVariable ("pId") long id)
+	public String deleteLinkAdm(Model modele, @PathVariable ("pId") long id,HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 	{
+		if(session.getAttribute("adminIn")!=null)
+		{
 		//instancier un administrateur :
-		Administrateur adminIn=new Administrateur();
-		adminIn.setId_adm(id);
+		Administrateur adminIn2=new Administrateur();
+		adminIn2.setId_adm(id);
 		
 		//appel de la fonction supprimer :
 		adminService.deleteAdmin(id);
@@ -113,6 +129,11 @@ public class AdminController {
 		
 		//retourne à la JSP voulue :
 		return "accueilAdmin";	
+		}
+		else 
+		{
+			return "redirect:login";
+		}
 		
 	}
 	
@@ -121,9 +142,17 @@ public class AdminController {
 	/////Methode pour rechercher un administrateur par son id:
 	          ////Pour afficher le formulaire :
 	@RequestMapping(value="/afficheRechAdm",method = RequestMethod.GET)
-	public ModelAndView afficheRechAdm()
+	public String afficheRechAdm(Model modele, HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 	{
-		return new ModelAndView("rechAdmin","admRech", new Administrateur());
+		if(session.getAttribute("adminIn")!=null)
+		{
+		modele.addAttribute("admRech", new Administrateur());
+		return "rechAdmin";
+		}
+		else
+		{
+			return "redirect:login";
+		}
 	}
 	
 	         /////Pour soumettre le formulaire :
@@ -149,9 +178,17 @@ public class AdminController {
 	////Methode pour modifier un administrateur :
                     ////Pour afficher le formulaire :
 	@RequestMapping(value="/afficheUpdateAdm",method = RequestMethod.GET)
-	public ModelAndView afficheUpdateAdm()
+	public String afficheUpdateAdm(Model modele, HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 	{
-		return new ModelAndView("modifAdmin","admMod", new Administrateur());
+		if(session.getAttribute("adminIn")!=null)
+		{
+		modele.addAttribute("admMod", new Administrateur());
+		return "modifAdmin";
+		}
+		else
+		{
+			return "redirect:login";
+		}
 	}
 	
 	            ///Pour soumettre le formulaire :
@@ -183,20 +220,114 @@ public class AdminController {
 
 	///Methode pour le lien de la modification :
 	@RequestMapping(value="/updateLinkAdmin", method = RequestMethod.GET)
-	public String updateLinkAdmin(Model modele,  @RequestParam ("pId") long id)
+	public String updateLinkAdmin(Model modele,  @RequestParam ("pId") long id, HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 	{
+		if(session.getAttribute("adminIn")!=null)
+		{
 		//instancier un administrateur :
-		Administrateur admIn=new Administrateur();
-		admIn.setId_adm(id);
+		Administrateur admIn2=new Administrateur();
+		admIn2.setId_adm(id);
 		
 		//appel à la fonction findById pour chercher un admin :
-		Administrateur admOut= adminService.findAdminById(admIn.getId_adm());
+		Administrateur admOut= adminService.findAdminById(admIn2.getId_adm());
 		
 		//mettre à jour le modele:
 		modele.addAttribute("admMod", admOut);
 		
 		return "modifAdmin";
+		}
+		else
+		{
+			return "redirect:login";
+		}
 	}
+	
+	
+	
+	/////////////methode pour la connexion :
+	@RequestMapping(value="/login", method = RequestMethod.GET)
+	public String loginAdmin(Model modele, HttpServletRequest req)
+	{
+		modele.addAttribute("admLog", new Administrateur());
+		
+		HttpSession session=req.getSession();
+		session.invalidate();
+		
+		return "login";
+	}
+	
+	
+	@RequestMapping(value="/submitloginAdmin",method = RequestMethod.POST)
+	public String loginAdmSubmit(Model modele,@ModelAttribute("admLog") Administrateur adminIn,HttpServletRequest req)
+	{	
+		
+		Administrateur admOut=adminService.loginAdmin(adminIn.getEmail(), adminIn.getMdp());
+		
+		
+		if(admOut!=null)
+		{
+			List<Administrateur> listeAdmin=adminService.getAllAdmin();
+			
+			modele.addAttribute("listeAdmin", listeAdmin);
+			
+			modele.addAttribute("admAdd", new Administrateur());
+			
+			HttpSession session=req.getSession(true);
+			session.setAttribute("adminIn", adminIn);
+			
+			
+			return "dashboard";
+
+		}
+		else
+		{
+			return "login";
+		}
+		
+	}
+	
+	
+	////////Methode pour se registrer :
+	////Affichage du formulaire :
+@RequestMapping(value="/registerAdmin", method = RequestMethod.GET)
+public String registerAdmin(Model modele)
+{
+//insérer un admin dans le modele:
+modele.addAttribute("admLog", new Administrateur());
+
+//retourner la page jsp :
+return "registerAdmin";
+}
+
+////Soumettre le formulaire :
+@RequestMapping(value="/submitRegisterAdmin", method = RequestMethod.POST)
+public String submitRegisterAdmin(Model modele, @ModelAttribute("admLog") Administrateur admIn)
+{
+
+//appel de la fonction ajouter un admin :
+Administrateur admOut=adminService.addAdmin(admIn);
+
+
+if(admOut != null)
+{
+//faire appel à la fonstion getAll pour mettre à jour la liste:
+List<Administrateur> listeAdmin=adminService.getAllAdmin();
+
+//mettre à jour la liste dans le modele :
+modele.addAttribute("listeAdmin", listeAdmin);
+
+//retourner à la jsp voulue :
+return "login";
+}
+else
+{
+	return "registerAdmin";
+}
+
+}
+	
+	
+	
 	
 	
 

@@ -2,6 +2,8 @@ package com.example.demo.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dao.IAdherentDao;
 import com.example.demo.entities.Adherent;
+import com.example.demo.entities.Administrateur;
 import com.example.demo.services.AdherentServices;
 
 @Controller
@@ -42,8 +45,11 @@ public class AdherentController {
 
 	/////affichage de la liste
 	@RequestMapping(value="/listeAdherent", method=RequestMethod.GET)
-	public String afficherListAdherent(Model modele)
+	public String afficherListAdherent(Model modele, HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 	{
+		
+		if(session.getAttribute("adminIn")!=null)
+		{
 		//appel de la fonction getAll
 		List<Adherent> listeAdhe=adherentService.getAllAdhe();
 		
@@ -53,6 +59,11 @@ public class AdherentController {
 		
 		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
 		return "accueilAdherent";
+		}
+		else
+		{
+			return "redirect:/admController/login";
+		}
 		
 	}
 	
@@ -60,11 +71,19 @@ public class AdherentController {
 	/////ajout dans la liste
 			//afficher le formulaire
 	@RequestMapping(value="/addAdhAffiche", method = RequestMethod.GET)
-	public  ModelAndView addAdhAffiche()
+	public  String addAdhAffiche(Model modele, HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 	{
 	
-		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
-		return new ModelAndView("ajoutAdherent","adhAjout",new Adherent());
+		if(session.getAttribute("adminIn")!=null)
+		{
+		modele.addAttribute("adhAjout",new Adherent());
+		
+		return "ajoutAdherent";
+		}
+		else
+		{
+			return "redirect:/admController/login";
+		}
 	}
 	
 			//soumettre le formulaire
@@ -97,10 +116,18 @@ public class AdherentController {
 	 //////////rechercher par l'id:
 			//afficher le formulaire
 	@RequestMapping(value="/rechercherAdhIdAffiche",method = RequestMethod.GET)
-	public ModelAndView rechercherAdhIdAffiche()
+	public String rechercherAdhIdAffiche(Model modele, HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 	{		
+		if(session.getAttribute("adminIn")!=null)
+		{
+		modele.addAttribute("adhRech",new Adherent());		
 		//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
-		return new ModelAndView("rechercheId","adhRech",new Adherent());
+		return "rechercheId";
+		}
+		else
+		{
+			return "redirect:/admController/login";
+		}
 	}
 	
 	@RequestMapping(value = "/rechercherAdhIdSubmit",method = RequestMethod.POST)
@@ -127,10 +154,19 @@ public class AdherentController {
 	/////modifier dans la liste
 	//afficher le formulaire
 @RequestMapping(value="/updateAdhAffiche", method = RequestMethod.GET)
-public ModelAndView updateAdhAffiche()
+public String updateAdhAffiche(Model modele,HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 {
+	if(session.getAttribute("adminIn")!=null)
+	{
 	//retour d'un modele and view composé de la jsp et stockage de la liste dans le modele
-return new ModelAndView("modifAdherent","adhModif",new Adherent());
+	modele.addAttribute("adhModif",new Adherent());	
+	return "modifAdherent";
+	}
+	else
+	{
+		return "redirect:/admController/login";
+	}
+	
 }
 
 	//soumettre le formulaire
@@ -148,7 +184,6 @@ if(adhOut!=null)
 	//mettre la liste à jour dans le modele
 	modele.addAttribute("listeAdherent",listeAdh );
 	modele.addAttribute("adhAjout", new Adherent());
-
 	
 	//retour sur la jsp voulue
 	return "accueilAdherent";
@@ -163,9 +198,10 @@ else
 
 ////////lien de modification :
 @RequestMapping(value="/updateLinkAdh",method = RequestMethod.GET)
-public String updateLinkAdh(Model modele, @RequestParam("pId") long id)
+public String updateLinkAdh(Model modele, @RequestParam("pId") long id, HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 {
-	
+	if(session.getAttribute("adminIn")!=null)
+	{
 	//instantiation d'un adherent
 	Adherent adhIn=new Adherent();
 	//mettre comme attribut id de l'adherent l'id request param
@@ -179,6 +215,11 @@ public String updateLinkAdh(Model modele, @RequestParam("pId") long id)
 	
 	//retour à la jsp voulue
 	return "modifAdherent"; 
+	}
+	else
+	{
+		return "redirect:/admController/login";
+	}
 }
 
 
@@ -186,8 +227,11 @@ public String updateLinkAdh(Model modele, @RequestParam("pId") long id)
 
 //////lien de suppression :
 @RequestMapping(value = "/deleteLinkAdh/{pId}",method = RequestMethod.GET)
-public String deleteLinkAdh(Model modele, @PathVariable ("pId") long id)
+public String deleteLinkAdh(Model modele, @PathVariable ("pId") long id,HttpSession session, @ModelAttribute("admLog") Administrateur adminIn)
 {
+	
+	if(session.getAttribute("adminIn")!=null)
+	{
 	//instantiation d'un adherent
 	Adherent adhIn=new Adherent();
 	//mettre comme attribut id de l'adherent l'id request param
@@ -207,6 +251,11 @@ public String deleteLinkAdh(Model modele, @PathVariable ("pId") long id)
 	
 	//retour a la jsp voulue
 	return "accueilAdherent";
+	}
+	else
+	{
+		return "redirect:/admController/login";
+	}
 	
 }
 
@@ -242,7 +291,7 @@ else
 }
 
 
-///////////rechercher l'adhérent par le nom
+///////////rechercher l'adhérent par le ville
 //afficher le formulaire
 @RequestMapping(value="/rechercherAdhVilleAffiche",method = RequestMethod.GET)
 public ModelAndView rechercherAdhVilleAffiche()

@@ -178,4 +178,10 @@ public class AdminDao implements IAdminDao {
 		return false;
 	}
 
+	@Override
+	public Administrateur loginAdmin(String email, String mdp) {
+		// TODO Auto-generated method stub
+		return adminDao.loginAdmin(email, mdp);
+	}
+
 }
