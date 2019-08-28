@@ -82,7 +82,6 @@ public class EmpruntsController {
 	public String listeRetard(Model modele,HttpServletRequest request) throws ParseException
 	{
 		List<Emprunt> listeRetardataire=empruntDao.getLatecomer();
-		//List<Object> listeRetardataire=empruntDao.getLatecomer();
 
 	    modele.addAttribute("listeRetardataire", listeRetardataire);
 	    
