@@ -23,7 +23,7 @@
   
 <%--   <link href="${pageContext.request.contextPath}/resources/css/adherentCss/ionicons.min.css" rel="stylesheet"> --%>
   
-<%--   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adherentCss/accueilAdhe.css"> --%>
+<%--   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/livre.css"> --%>
   
 
 <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->

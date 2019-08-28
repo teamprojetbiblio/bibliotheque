@@ -28,6 +28,18 @@ public class Livre implements Serializable {
 	private String titre;
 	private String auteur;
 	private String editeur;
+	public Livre(String titre, String auteur, String editeur, String imgLivre, String description,
+			List<Exemplaire> listeExemplaire, Categorie categorie) {
+		super();
+		this.titre = titre;
+		this.auteur = auteur;
+		this.editeur = editeur;
+		this.imgLivre = imgLivre;
+		this.description = description;
+		this.listeExemplaire = listeExemplaire;
+		this.categorie = categorie;
+	}
+
 	private String imgLivre;
 	private String description;
 
@@ -55,7 +67,7 @@ public class Livre implements Serializable {
 	}
 
 	public Livre(String titre, String auteur, String editeur) {
-		super();
+
 		this.titre = titre;
 		this.auteur = auteur;
 		this.editeur = editeur;
