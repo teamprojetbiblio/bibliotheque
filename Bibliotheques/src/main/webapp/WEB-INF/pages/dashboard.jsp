@@ -1,7 +1,11 @@
 
 <%@ include file="fragments/header.html"%>
 
-<p>Bienvenue !!</p>
+<h4><a href="/admController/login">Se déconnecter</a></h4>
+
+
+
+<p>Bienvenue !! ${adminIn.nom}  ${adminIn.prenom}</p>
 <div>
 	<h3>Statistiques :</h3>
 	

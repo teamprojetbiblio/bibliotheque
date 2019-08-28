@@ -51,4 +51,11 @@ public class AdminService {
 		return ;
 	}
 	
+	
+	//methode ppour la connexion:
+	public Administrateur loginAdmin(String email,String mdp)
+	{
+		return adminDao.loginAdmin(email, mdp);
+	}
+	
 }
