@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.example.demo.entities.Adherent;
 import com.example.demo.entities.Emprunt;
 
 
@@ -36,6 +37,12 @@ public interface EmpruntDao extends JpaRepository<Emprunt, Long> {
 	
 	@Query("select e from Emprunt e where e.adherent.id_adh =:x")
 	public List<Emprunt> chercherParSession (@Param("x")long adhId);
+	
+	/*@Query("select em.id_emp, em.adherent.id_adh, em.adherent.nom, em.adherent.prenom, "
+			+ " em.exemplaire.id_exe, em.exemplaire.livre.id_liv, "
+			+ " em.exemplaire.livre.titre FROM Emprunt AS em  WHERE DATEDIFF(current_date,em.dateEmprunt)>21")*/
+	@Query("select em from Emprunt as em where DATEDIFF(current_date,em.dateEmprunt)>21 ")
+	public List<Emprunt> getLatecomer();
 	
 	}
 

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.IAdherentDao;
 import com.example.demo.entities.Adherent;
+import com.example.demo.entities.Emprunt;
 
 @Service
 @Transactional
@@ -64,5 +65,10 @@ public class AdherentServices {
 		return adherentDao.rechParVille(adh.getVille());
 	}
 	
+	
+	/*public List<Emprunt> getLatecomer(){
+		return adherentDao.getLatecomer();
+	}
+	*/
 
 }

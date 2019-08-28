@@ -51,6 +51,18 @@ public class Emprunt implements Serializable {
 		this.dateRetour = dateRetour;
 	}
 	
+	
+	
+//	public Emprunt(long id_emp, Date dateEmprunt, Date dateRetour, Adherent adherent, Exemplaire exemplaire) {
+//		super();
+//		this.id_emp = id_emp;
+//		this.dateEmprunt = dateEmprunt;
+//		this.dateRetour = dateRetour;
+//		this.adherent = adherent;
+//		this.exemplaire = exemplaire;
+//	}
+	
+	
 	//getters et setters
 	public long getId_emp() {
 		return id_emp;

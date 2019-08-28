@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.dao.IAdherentDao;
 import com.example.demo.entities.Adherent;
 import com.example.demo.entities.Administrateur;
+import com.example.demo.entities.Emprunt;
 import com.example.demo.services.AdherentServices;
 
 @Controller
@@ -321,6 +322,16 @@ return "rechercheVille";
 }
 
 
+/*@RequestMapping(value="/listeRetard",method = RequestMethod.GET)
+public String listeRetard(Model modele)
+{
+	List<Emprunt> listeRetardataire=adherentService.getLatecomer();
+	
+    modele.addAttribute("listeRetardataire", listeRetardataire);
+    
+    return "listeRetardataire";
+}
+*/
 	
 
 }
