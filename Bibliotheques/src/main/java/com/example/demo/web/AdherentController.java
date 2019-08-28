@@ -322,16 +322,7 @@ return "rechercheVille";
 }
 
 
-/*@RequestMapping(value="/listeRetard",method = RequestMethod.GET)
-public String listeRetard(Model modele)
-{
-	List<Emprunt> listeRetardataire=adherentService.getLatecomer();
-	
-    modele.addAttribute("listeRetardataire", listeRetardataire);
-    
-    return "listeRetardataire";
-}
-*/
+
 	
 
 }

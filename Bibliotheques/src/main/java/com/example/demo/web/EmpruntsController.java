@@ -90,50 +90,7 @@ public class EmpruntsController {
 		
 	}
 
-//	
-//	@RequestMapping(value="/listeRetard",method = RequestMethod.GET)
-//	public String listeRetard(HttpServletRequest request, HttpServletResponse response) throws ParseException
-//	{
-//		
-//		long idEmp=Long.parseLong(request.getParameter("id_emp"));
-//		long idAdh=Long.parseLong(request.getParameter("adherent.id_adh"));
-//		String nomAdh=request.getParameter("adherent.nom");
-//		String prenomAdh=request.getParameter("adherent.prenom");
-//		long idEx=Long.parseLong(request.getParameter("exemplaire.id_exe"));
-//		long idLiv=Long.parseLong(request.getParameter("exemplaire.livre.id_liv"));
-//		String titre=request.getParameter("exemplaire.livre.titre");
-//		Date dateRet= df.parse(request.getParameter("dateEmprunt"));
-//		
-//		
-//		Livre livre = new Livre();
-//         livre.setId_liv(idLiv);
-//         livre.setTitre(titre);
-//		Exemplaire exemplaire=new Exemplaire();
-//		exemplaire.setId_exe(idEx);
-//		exemplaire.setLivre(livre);
-//		Adherent adherent=new Adherent();
-//		adherent.setId_adh(idAdh);
-//		adherent.setNom(nomAdh);
-//		adherent.setPrenom(prenomAdh);	
-//		
-//		Emprunt emprunt=new Emprunt();
-//		emprunt.setDateEmprunt(dateRet);
-//		emprunt.setId_emp(idEmp);
-//		emprunt.setAdherent(adherent);
-//		emprunt.setExemplaire(exemplaire);
-//
-//	
-//		List<Emprunt> listeRetardataire=empruntDao.getLatecomer();
-//		request.setAttribute("listeRetardataire",listeRetardataire);
-//
-//		HttpSession maSession=request.getSession(true);
-//		maSession.setAttribute("listeRetardataire",listeRetardataire);
-//
-//	   // modele.addAttribute("listeRetardataire", listeRetardataire);
-//	    
-//	    return "listeRetardataire";
-//	}
-		
+
 		
 	
 }
