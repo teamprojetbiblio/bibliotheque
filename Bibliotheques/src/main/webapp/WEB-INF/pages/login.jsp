@@ -22,9 +22,10 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 
 
 
-<form method="post" action="submitloginAdmin">
+<form method="post" action="submitloginAdmin">	
+
 <div class="form-group">
-	<label for="nom">Nom : </label> 
+<label for="nom">Nom : </label> 
 	<input type="text" class="form-control" name="nom" value="${admLog.nom}">
 	</div>
 	
@@ -32,7 +33,6 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 	<label for="prenom">Prenom : </label> 
 	<input type="text" class="form-control" name="prenom" value="${admLog.prenom}">
 	</div>
-
 
 	<div class="form-group">
 	<label for="email">Email : </label> 

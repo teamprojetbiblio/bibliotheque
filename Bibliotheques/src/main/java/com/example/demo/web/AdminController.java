@@ -270,7 +270,12 @@ public class AdminController {
 			
 			modele.addAttribute("listeAdmin", listeAdmin);
 			
+			
 			modele.addAttribute("admAdd", new Administrateur());
+			
+			
+			 //modele.addObject("admAdd",adminIn.getPrenom()+" "+adminIn.getNom());
+
 			
 			HttpSession session=req.getSession(true);
 			session.setAttribute("adminIn", adminIn);
