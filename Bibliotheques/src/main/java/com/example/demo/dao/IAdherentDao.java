@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.example.demo.entities.Adherent;
+import com.example.demo.entities.Emprunt;
 
 public interface IAdherentDao extends JpaRepository<Adherent, Long> {
 	
@@ -23,6 +24,9 @@ public interface IAdherentDao extends JpaRepository<Adherent, Long> {
 	//Vérification connexion adhérent (mail+password)
 	@Query("select a FROM Adherent a where a.email=:x and a.password=:y")
 	public Adherent checkLog(@Param("x") String email, @Param("y") String psw);
+	
+	
+
 	
 
 }

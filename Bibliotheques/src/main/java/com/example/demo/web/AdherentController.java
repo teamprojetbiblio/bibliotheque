@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.dao.IAdherentDao;
 import com.example.demo.entities.Adherent;
 import com.example.demo.entities.Administrateur;
+import com.example.demo.entities.Emprunt;
 import com.example.demo.services.AdherentServices;
 
 @Controller
@@ -319,6 +320,7 @@ else
 return "rechercheVille";
 }
 }
+
 
 
 	

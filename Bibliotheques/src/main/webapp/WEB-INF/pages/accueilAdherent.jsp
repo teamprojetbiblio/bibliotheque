@@ -130,6 +130,12 @@
 </div>
 <br/>
 <br/>
+<form method="get" action="/emprunts/listeRetard">
+<button type="submit" class="btn btn-primary">
+Liste des retardataires</button>
+</form>
+<br/>
+<br/>
         <div class="card mb-3">
           <div class="card-header">
             Table d'adherents</div>

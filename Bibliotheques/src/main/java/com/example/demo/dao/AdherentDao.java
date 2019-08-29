@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
 import com.example.demo.entities.Adherent;
+import com.example.demo.entities.Emprunt;
 
 @Repository
 @Transactional
@@ -205,6 +206,12 @@ public class AdherentDao implements IAdherentDao  {
 		return adherentDao.checkLog(email,psw);
 	}
 
+	/*@Override
+	public List<Emprunt> getLatecomer() {
+		// TODO Auto-generated method stub
+		return adherentDao.getLatecomer();
+	}
+*/
 
 	
 	
