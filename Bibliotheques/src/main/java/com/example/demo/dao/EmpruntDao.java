@@ -41,7 +41,7 @@ public interface EmpruntDao extends JpaRepository<Emprunt, Long> {
 	/*@Query("select em.id_emp, em.adherent.id_adh, em.adherent.nom, em.adherent.prenom, "
 			+ " em.exemplaire.id_exe, em.exemplaire.livre.id_liv, "
 			+ " em.exemplaire.livre.titre FROM Emprunt AS em  WHERE DATEDIFF(current_date,em.dateEmprunt)>21")*/
-	@Query("select em from Emprunt as em where DATEDIFF(current_date,em.dateEmprunt)>21 ")
+	@Query("select em from Emprunt as em where DATEDIFF(current_date,em.dateEmprunt)>21 or DATEDIFF(em.dateRetour,em.dateEmprunt)>21   ")
 	public List<Emprunt> getLatecomer();
 	
 	}
